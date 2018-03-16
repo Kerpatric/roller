@@ -1,7 +1,7 @@
 
 
 body {
-    background: url(dragon.jpg);
+    background: url(../images/dragon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -36,7 +36,7 @@ h2 {
 
 @font-face {
     font-family: FenwickWoodtype;
-    src: url(FenwickWoodtype.ttf);
+    src: url(../fonts/FenwickWoodtype.ttf);
 }
 
 .fontStyle {
