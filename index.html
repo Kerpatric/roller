@@ -9,7 +9,6 @@
         crossorigin="anonymous">
     <title>ZekeS Login</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -62,14 +61,14 @@
                 <div class="col-sm-7">
                     <div class="fontStyle">
                         <p>Don't yet have an account?
-                            <a href id="register">Click Here To Register</a>
+                            <a href="javascript:void(0)" id="register">Click Here To Register</a>
                             <!--registration for new players -->
                         </p>
                     </div>
                 </div>
             </div>
         </form>
-        <form id="registerNewPlayer">
+        <form id="registerNewPlayer" class="hide">
             <!--New Player Registration-->
             <div class="row">
                 <div class="col-sm-5">
@@ -127,13 +126,14 @@
                 <div class="col-sm-5">
                     <!--spacer col -->
                 </div>
-                <button type="button" class="btn btn-warning" id="submitButton" >Submit</button>
+                <button type="button" class="btn btn-warning" id="submitButton">Submit</button>
             </div>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <!--Firebase link in js -->
-    <script src="assets/script.login.js"></script>
+    <script src="assets/script/login.js"></script>
     <!--js file link -->
 </body>
 
