@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <title>ZekeS Login</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
@@ -33,7 +32,7 @@
 
             </div>
         </div>
-        <form>
+        <form id="welcomeToAdventure">
             <div class="form-group row">
                 <div class="col-sm-5">
 
@@ -63,9 +62,56 @@
                     </div>
                 </div>
             </div>
+        </form>
+        <form id="registerNewPlayer">
+            <div class="row">
+                <div class="col-sm-5">
 
+                </div>
+
+                <div class="col-sm-7">
+                    <div class="fontStyle">
+                        <p>Please complete the below information:</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="newEmail" placeholder="email" width="25" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="newUserName" placeholder="username" maxlength="20">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="newPassword" placeholder="password" width="25" maxlength="50">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="confirmPassword" placeholder="confirm password" width="25" maxlength="50">
+                </div>
+            </div>
         </form>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="assets/script.login.js"></script>
 </body>
 
 </html>
