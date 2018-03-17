@@ -66,3 +66,7 @@ a {
 #welcomeToAdventure {
     display: block;
 }
+
+#submitButton {
+    margin-left: 1.3%;
+}
