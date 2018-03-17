@@ -58,3 +58,11 @@ p {
 a {
     color: gray;
 }
+
+#registerNewPlayer {
+    display: block;
+}
+
+#welcomeToAdventure {
+    display: block;
+}
