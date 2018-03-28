@@ -8,6 +8,7 @@ $(document).ready(function(){
     var d10 = 0;
     var d12 = 0;
     var d20 = 0;
+    var d100 = 0;
 
 
     //Dice rolling functions
@@ -41,6 +42,10 @@ $(document).ready(function(){
     }
     function rolld20(min, max) {
         var a = Math.floor(Math.random() * 20) + 1;  // returns a number between 1 and 20
+        return a;
+    }
+    function rolld100(min, max) {
+        var a = Math.floor(Math.random() * 100) + 1;  // returns a number between 1 and 100
         return a;
     }
 });
