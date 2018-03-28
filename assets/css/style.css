@@ -1,0 +1,69 @@
+
+
+body {
+    background: url(../images/dragon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    }
+
+h1 {
+    font-family: FenwickWoodtype;
+    color: goldenrod;
+    font-size: 5em;
+}
+
+#indentZeke {
+    margin-left:12%;
+}
+
+h2 {
+    font-family: FenwickWoodtype;
+    color: lightgray;
+    font-size: 4em;
+}
+
+.spaceFromTop {
+    margin-top: 3%;
+}
+
+#titleTop {
+    margin-top: 1%;
+    margin-left: 1%;
+    padding-left:0;
+    text-align: left;
+}
+
+.forgotPassword {
+    padding-top: 3%;
+    text-align: right;
+    font-weight: bolder;
+    font-size: 1.25em;
+}
+
+@font-face {
+    font-family: FenwickWoodtype;
+    src: url(../fonts/FenwickWoodtype.ttf);
+}
+
+.fontStyle {
+    font-weight: bolder;
+    font-size: 1.25em;
+}
+
+p { 
+    color: lightgray;
+}
+
+a {
+    color: gray;
+}
+
+#submitButton {
+    margin-left: 1.3%;
+}
+
+.hide {
+    display: none;
+}
+

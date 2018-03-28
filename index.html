@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <title>ZekeS Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 </head>
 
 <body>
@@ -17,57 +19,134 @@
             <div class="col-sm-6">
                 <h1 id="titleTop">ZekeS Dice Roller</h1>
             </div>
+
+            <div class="col-sm-6">
+                <p class="forgotPassword fontstyle">
+                    <a href="#">Forgot Your Password?</a>
+                </p>
+            </div>
         </div>
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-5"> </div>
+            <!--spacer col -->
 
-            </div>
             <div class="col-sm-7">
                 <h2 class="spaceFromTop">Welcome, Adventurer</h2>
 
             </div>
         </div>
-        <form>
+
+        <form id="welcomeToAdventure">
             <div class="form-group row">
                 <div class="col-sm-5">
+                    <!--spacer col -->
 
                 </div>
                 <div class="col-sm-4">
+                    <!--spacer col -->
+
                     <input type="email" class="form-control" id="inputEmail" placeholder="email" width="25" maxlength="50">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-5">
+                    <!--spacer col -->
 
                 </div>
                 <div class="col-sm-4">
+                    <!--password -->
+
                     <input type="password" class="form-control" id="inputPassword" placeholder="password" maxlength="20">
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-5">
 
+                    <!--spacer col -->
+
+
                 </div>
 
                 <div class="col-sm-7">
                     <div class="fontStyle">
                         <p>Don't yet have an account?
-                            <a href="#">Register Here</a>
+
+                            <a href="javascript:void(0)" id="register">Click Here To Register</a>
+                            <!--registration for new players -->
+
                         </p>
                     </div>
                 </div>
             </div>
+
+        </form>
+        <form id="registerNewPlayer" class="hide">
+            <!--New Player Registration-->
             <div class="row">
                 <div class="col-sm-5">
+                    <!--spacer col -->
 
                 </div>
 
-                <div class="col-sm-7 fontStyle">
-                    <a href="#">Forgot Your Password?</a>
+                <div class="col-sm-7">
+                    <!--New Registration -->
+                    <div class="fontStyle">
+                        <p>Please complete the below information:</p>
+                    </div>
                 </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <!--spacer col -->
+
+                </div>
+                <div class="col-sm-4">
+                    <input type="email" class="form-control" id="newEmail" placeholder="email" width="25" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <!--spacer col -->
+
+                </div>
+                <div class="col-sm-4">
+                    <!--username field -->
+                    <input type="password" class="form-control" id="newUserName" placeholder="username" maxlength="20">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <!--spacer col -->
+
+                </div>
+                <div class="col-sm-4">
+                    <!--enter password field -->
+                    <input type="email" class="form-control" id="newPassword" placeholder="password" width="25" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <!--spacer col -->
+
+                </div>
+                <div class="col-sm-4">
+                    <!--confirm password -->
+                    <input type="email" class="form-control" id="confirmPassword" placeholder="confirm password" width="25" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <!--spacer col -->
+                </div>
+                <button type="button" class="btn btn-warning" id="submitButton">Submit</button>
             </div>
         </form>
     </div>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <!--Firebase link in js -->
+    <script src="assets/script/login.js"></script>
+    <!--js file link -->
+
 
 </html>
