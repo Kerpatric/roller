@@ -1,14 +1,14 @@
 $(document).ready(function(){
     //Global Variables
-    var d2 = 0;
-    var d3 = 0;
-    var d4 = 0;
-    var d6 = 0;
-    var d8 = 0;
-    var d10 = 0;
-    var d12 = 0;
-    var d20 = 0;
-    var d100 = 0;
+    var d2 = "";
+    var d3 = "";
+    var d4 = "";
+    var d6 = "";
+    var d8 = "";
+    var d10 = "";
+    var d12 = "";
+    var d20 = "";
+    var d100 = "";
 
 
     //Dice rolling functions
