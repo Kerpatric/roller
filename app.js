@@ -1,6 +1,7 @@
-// Initialize Firebase
-$(document).ready(function () {
 
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+  // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB_sWSBse_GOfDx63Jh5wEj_GNs4Fyl5pI",
     authDomain: "zekes-dice-rolling-app.firebaseapp.com",
@@ -11,10 +12,7 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
- //when the user clicks the login with facebook button, the popup appears to sign in with facebook. 
- $(function() {
-   $("#facebook").click(function() {
-    var provider = new firebase.auth.FacebookAuthProvider();
+  var provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Facebook Access Token. You can use it to access the Facebook API.
     var token = result.credential.accessToken;
@@ -31,18 +29,14 @@ $(document).ready(function () {
     var credential = error.credential;
     // ...
   });
-});
- });
-  //when the user clicks the login with twitter button, the popup appears to sign in with twitter. 
-$(function() {
-   $("#twitter").click(function() {
-    var provider = new firebase.auth.FacebookAuthProvider();
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-    var token = result.credential.accessToken;
+  firebase.auth().getRedirectResult().then(function(result) {
+    if (result.credential) {
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      var token = result.credential.accessToken;
+      // ...
+    }
     // The signed-in user info.
     var user = result.user;
-    // ...
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -53,10 +47,3 @@ $(function() {
     var credential = error.credential;
     // ...
   });
-});
- });
-  $("#register").click(function () {
-    $("#welcomeToAdventure").addClass("hide");
-    $("#registerNewPlayer").removeClass("hide");
-  });
-});
