@@ -1,5 +1,10 @@
 body {
     background-image: url("../images/parchment.jpg");
+    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: FenwickWoodtype;
+    color: black;
 }
+
+
