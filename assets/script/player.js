@@ -37,8 +37,6 @@ $(document).ready(function(){
             name: 'd100',
             max: 100
         },
-
-
     }
 
     //Dice rolling functions
@@ -47,18 +45,25 @@ $(document).ready(function(){
        console.log(a) ;
 
     }
-
+    //When dice are clicked, they are added into the selected dice div to await roll funtion.
     $('#dice').on('click', 'img', function() {
         var myElement = $(this);
         var img = myElement.clone();
         $('#selectedDice').append(img);
     });
-
+   //Dice can be removed from the rolling que by clicking on them while in the selected dice div.
     $('#selectedDice').on('click', 'img', function() {
         var myElement = $(this);
         var img = myElement.remove();
     });
-    
+    //When the roll dice image is clicked, all dice in the selected dice div (rolling que) are rolled
+    $('#rollDice').on('click', 'img', function() {
+    console.log("Kailey needs help making the dice roll");
+    //the images of the dice in the rolling que are removed
+    $("#selectedDice").remove();   
+    //the sum of the roll is displayed in the results div 
+    $("#displayResults").append("Kailey will complete once have code for rolling die");
+   
+
 });
-
-
+});
