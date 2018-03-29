@@ -47,4 +47,18 @@ $(document).ready(function(){
        console.log(a) ;
 
     }
+
+    $('#dice').on('click', 'img', function() {
+        var myElement = $(this);
+        var img = myElement.clone();
+        $('#selectedDice').append(img);
+    });
+
+    $('#selectedDice').on('click', 'img', function() {
+        var myElement = $(this);
+        var img = myElement.remove();
+    });
+    
 });
+
+
