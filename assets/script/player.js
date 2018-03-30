@@ -6,7 +6,6 @@ $(document).ready(function () {
         d2: {
             name: 'd2',
             max: 2,
-            image: 'du.png'
         },
         d3: {
             name: 'd3',
@@ -15,32 +14,26 @@ $(document).ready(function () {
         d4: {
             name: 'd4',
             max: 4,
-            image: 'd4.png'
         },
         d6: {
             name: 'd6',
             max: 6,
-            image: 'd6.png'
         },
         d8: {
             name: 'd8',
             max: 8,
-            image: 'd8.png'
         },
         d10: {
             name: 'd10',
             max: 10
-
         },
         d12: {
             name: 'd12',
             max: 12,
-            image: 'd12.png'
         },
         d20: {
             name: 'd20',
             max: 20,
-            image: 'd20.png'
         },
         d100: {
             name: 'd100',
