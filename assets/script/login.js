@@ -12,6 +12,7 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   firebase.auth().onAuthStateChanged(function(user) {
+
     console.log(user);
     if (user) {
       // User is signed in.
@@ -91,6 +92,23 @@ $(document).ready(function() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(emailAddress, firstPassword)
+        .then(user => {
+          // [END createwithemail]
+          // callSomeFunction(); Optional
+          // var user = firebase.auth().currentUser;
+          user
+            .updateProfile({
+              displayName: $("#newName").val()
+            })
+            .then(
+              function() {
+                // Update successful.
+              },
+              function(error) {
+                // An error happened.
+              }
+            );
+        })
         .catch(function(error) {
           // Handle Errors here.
           var errorCode = error.code;
@@ -125,7 +143,7 @@ $(document).ready(function() {
         // ...
       });
   });
-  
+
   $("#twitter").click(function() {
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase
@@ -149,8 +167,4 @@ $(document).ready(function() {
         // ...
       });
   });
-
 });
-
-
-

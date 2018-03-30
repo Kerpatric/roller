@@ -14,9 +14,26 @@ $(document).ready(function() {
   // Route user to login screen if they are not logged in.
   firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
-    if (!user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+
+      // setup NAV Links 
+      $('#home').html(user.displayName);
+      $('#logout').on('click', (evt) => firebase.auth().signOut() );
+      
+
+    } else {
+      // User is signed out.
       window.location = "login.html";
     }
+
   });
 
   var queue = [];
@@ -101,6 +118,8 @@ $(document).ready(function() {
     $("#displayResults").append("Total rolled: " + sum + "<br>");
     queue = [];
   });
+
+  
 
   
 });
