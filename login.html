@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <title>ZekeS Login</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -56,11 +57,33 @@
                 <div class="col-sm-5">
                     <!--spacer col -->
 
+                    </div>
+    
+                        <div class="col-sm-4"> <!--login with twitter button -->
+                            <a href=# id=twitter class="btn btn-block btn-social btn-twitter">
+                                    <span class="fab fa-twitter"></span> Sign in with Twitter
+                                </a>
+                 </div>  
+                 </div>              
+                <div class="form-group row">
+                    <div class="col-sm-5">
+                        <!--spacer col -->
+    
+                    </div>
+                    <div class="col-sm-4"> <!--login with facebook button -->
+                        <a href=# id=facebook class="btn btn-block btn-social btn-facebook">
+                                <span class="fab fa-facebook"></span> Sign in with Facebook
+                            </a>
                 </div>
-
+                </div>
+                <div class="form-group row">
                 <div class="col-sm-5">
                     <!--spacer col -->
+                    </div>
+                    <div>
+                        <div class="col-sm-6">
                     <button type="button" class="btn btn-warning" id="loginButton">Submit</button>
+                </div>
                 </div>
             </div>
             <div class="form-group row">
@@ -141,6 +164,8 @@
     <!--jquery link-->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <!--Firebase link in js -->
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script> <!--Firebase link in js for facebook and twitter login -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> <!--Fontawesome file link -->
     <script src="assets/script/login.js"></script>
     <!--js file link -->
 
