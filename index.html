@@ -5,173 +5,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>ZekeS Login</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Player Screen</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/player.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1 id="titleTop">ZekeS Dice Roller</h1>
-            </div>
-
-            <div class="col-sm-6">
-                <p class="forgotPassword fontstyle">
-                    <a href="#">Forgot Your Password?</a>
-                </p>
-            </div>
+    <!-- Main Body -->
+    <div class="container-fluid">
+        <header class="text-center">
+            <h3>Player name goes here</h3>
+        </header>
+        <!--This div will contain the results of each players rolls using scrollspy to look at earlier rolls-->
+        <div data-spy="scroll" data-offset="0">
         </div>
-        <div class="row">
-            <div class="col-sm-5"> </div>
-            <!--spacer col -->
-
-            <div class="col-sm-7">
-                <h2 class="spaceFromTop">Welcome, Adventurer</h2>
-
-            </div>
+        <!-- This div displays results of roll -->
+        <div id="displayResults">
         </div>
-
-        <form id="welcomeToAdventure">
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <!--spacer col -->
-
-                    <input type="email" class="form-control" id="inputEmail" placeholder="email" width="25" maxlength="50">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <!--password -->
-
-                    <input type="password" class="form-control" id="inputPassword" placeholder="password" maxlength="20">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-
-                    <div class="col-sm-4"> <!--login with twitter button -->
-                        <a href=# id=twitter class="btn btn-block btn-social btn-twitter">
-                                <span class="fab fa-twitter"></span> Sign in with Twitter
-                            </a>
-                            
-                </div>
-                </div>
-
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4"> <!--login with facebook button -->
-                    <a href=# id=facebook class="btn btn-block btn-social btn-facebook">
-                            <span class="fab fa-facebook"></span> Sign in with Facebook
-                        </a>
-            </div>
-                
-                    <div class="form-group row">
-                        <div class="col-sm-5"> <!--spacer col -->
-            
-                        </div>
-                <div class="col-sm-7">
-                    <div class="fontStyle">
-                        <p>Don't yet have an account?
-
-                            <a href="javascript:void(0)" id="register">Click Here To Register</a>
-                            <!--registration for new players -->
-
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </form>
-        <form id="registerNewPlayer" class="hide">
-            <!--New Player Registration-->
-            <div class="row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-
-                <div class="col-sm-7">
-                    <!--New Registration -->
-                    <div class="fontStyle">
-                        <p>Please complete the below information:</p>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <input type="email" class="form-control" id="newEmail" placeholder="email" width="25" maxlength="50">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <!--username field -->
-                    <input type="password" class="form-control" id="newUserName" placeholder="username" maxlength="20">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <!--enter password field -->
-                    <input type="email" class="form-control" id="newPassword" placeholder="password" width="25" maxlength="50">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-
-                </div>
-                <div class="col-sm-4">
-                    <!--confirm password -->
-                    <input type="email" class="form-control" id="confirmPassword" placeholder="confirm password" width="25" maxlength="50">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-5">
-                    <!--spacer col -->
-                </div>
-                <button type="button" class="btn btn-warning" id="submitButton">Submit</button>
-            </div>
-        </form>
+        <!-- This div displays the roll dice image -->
+        <div id="rollDice">
+            <img src="assets/images/dice-active.png">
+        </div>
+        <!-- This div displays all die selected for a single roll -->
+        <div id="selectedDice">
+        </div>
+        <!-- Footer containing dice bag -->
+        <div id="dice">
+            <footer>
+                <button id="d2">
+                    <img diceValue=2 src="assets/images/d4.png">
+                    <p>d2</p>
+                </button>
+                <button id="d3">
+                    <img diceValue=3 src="assets/images/d6.png">
+                    <p>d3</p>
+                </button>
+                <button id="d4">
+                    <img diceValue=4 src="assets/images/d4.png">
+                    <p>d4</p>
+                </button>
+                <button id="d6">
+                    <img diceValue=6 src="assets/images/d6.png">
+                    <p>d6</p>
+                </button>
+                <button id="d8">
+                    <img diceValue=8 src="assets/images/d8.png">
+                    <p>d8</p>
+                </button>
+                <button id="d10">
+                    <img diceValue="10" src="assets/images/dP.png">
+                    <p>d10</p>
+                </button>
+                <button id="d12">
+                    <img diceValue=12 src="assets/images/d12.png">
+                    <p>d12</p>
+                </button>
+                <button id="d20">
+                    <img diceValue=20 src="assets/images/d20.png">
+                    <p>d20</p>
+                </button>
+                <button id="d100">
+                    <img diceValue=100 src="assets/images/dP.png">
+                    <p>d100</p>
+                </button>
+            </footer>
+        </div>
     </div>
-</body>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--jquery link in js -->
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script> <!--Firebase link in js -->
-    <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script> <!--Firebase link in js for facebook and twitter login -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> <!--Fontawesome file link -->
-    <script src="assets/script/login.js"></script> <!--js file link -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <!--Firebase link in js -->
 
+
+    <!--jquery link in js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!--Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
+    <!-- <script src="https://cdn.firebase.com/js/simple-login/1.6.4/firebase-simple-login.js"></script>  -->
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/script/player.js"></script>
+    <!--js file link -->
+</body>
 
 </html>
