@@ -167,4 +167,13 @@ $(document).ready(function() {
         // ...
       });
   });
+
+  $("#forgot").on('click', evt => { 
+    var newEmail = $("#inputEmail").val();
+    firebase.auth().sendPasswordResetEmail(newEmail).then(() => {
+      $("#inputEmail").val("");
+      alert('Email sent.  Thank you.');
+
+    }).catch(err => alert(err.message));
+  });
 });
