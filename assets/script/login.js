@@ -89,6 +89,9 @@ $(document).ready(function() {
     if (firstPassword !== confirmFirstPassword) {
       alert("Passwords Do Not Match, Please Try Again");
     } else {
+
+      var newName = $("#newName").val();
+      
       firebase
         .auth()
         .createUserWithEmailAndPassword(emailAddress, firstPassword)
@@ -98,7 +101,7 @@ $(document).ready(function() {
           // var user = firebase.auth().currentUser;
           user
             .updateProfile({
-              displayName: $("#newName").val()
+              displayName: newName
             })
             .then(
               function() {
