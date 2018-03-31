@@ -5,6 +5,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
+    height: 100%;
     }
 
 h1 {
@@ -66,4 +67,5 @@ a {
 .hide {
     display: none;
 }
+
 

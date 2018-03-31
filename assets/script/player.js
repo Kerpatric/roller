@@ -11,12 +11,14 @@ $(document).ready(function() {
   };
   firebase.initializeApp(config);
 
+  var displayName = "";
+
   // Route user to login screen if they are not logged in.
   firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
     if (user) {
       // User is signed in.
-      var displayName = user.displayName;
+      displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
       var photoURL = user.photoURL;
@@ -34,6 +36,11 @@ $(document).ready(function() {
       window.location = "login.html";
     }
 
+  });
+
+  firebase.database().ref("chat").on("child_added", function(snapshot) {
+    var d = snapshot.val();
+    $("#displayResults").append('<div class="message">' + d.Message + '</div>');
   });
 
   var queue = [];
@@ -115,8 +122,19 @@ $(document).ready(function() {
     //the images of the dice in the rolling que are removed
     $("#selectedDice").html("");
     //the sum of the roll is displayed in the results div
-    $("#displayResults").append("Total rolled: " + sum + "<br>");
+    // $("#displayResults").append("displayName rolled: " + sum + "<br>");
     queue = [];
+
+    var message = displayName + " rolled a " + sum;
+
+    firebase.database().ref('chat').push({ Message :  message } );
+
+  });
+
+  $("#Send").on('click', function(){
+    var message = displayName + " : " + $("#SendText").val();
+    + $("#SendText").val("");
+    firebase.database().ref('chat').push({ Message :  message } );
   });
 
   
