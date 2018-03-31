@@ -12,7 +12,6 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   firebase.auth().onAuthStateChanged(function(user) {
-
     console.log(user);
     if (user) {
       // User is signed in.
@@ -76,6 +75,8 @@ $(document).ready(function() {
       .val()
       .trim();
 
+    var newName = $("#newName").val().trim();
+
     console.log(emailAddress);
     console.log(firstPassword);
     console.log(confirmFirstPassword);
@@ -89,9 +90,6 @@ $(document).ready(function() {
     if (firstPassword !== confirmFirstPassword) {
       alert("Passwords Do Not Match, Please Try Again");
     } else {
-
-      var newName = $("#newName").val();
-      
       firebase
         .auth()
         .createUserWithEmailAndPassword(emailAddress, firstPassword)
@@ -171,12 +169,15 @@ $(document).ready(function() {
       });
   });
 
-  $("#forgot").on('click', evt => { 
+  $("#forgot").on("click", evt => {
     var newEmail = $("#inputEmail").val();
-    firebase.auth().sendPasswordResetEmail(newEmail).then(() => {
-      $("#inputEmail").val("");
-      alert('Email sent.  Thank you.');
-
-    }).catch(err => alert(err.message));
+    firebase
+      .auth()
+      .sendPasswordResetEmail(newEmail)
+      .then(() => {
+        $("#inputEmail").val("");
+        alert("Email sent.  Thank you.");
+      })
+      .catch(err => alert(err.message));
   });
 });
