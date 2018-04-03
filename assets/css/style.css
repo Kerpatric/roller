@@ -68,5 +68,10 @@ a {
     display: none;
 }
 
+img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+  }
 
 

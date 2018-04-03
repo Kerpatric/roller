@@ -45,25 +45,25 @@
 
     <!-- Begin page content -->
 
-    <div id="main">
+    <div class="grid-container" id="main">
         <!-- This div displays results of roll -->
-        <div id="displayResults">
-        </div>
+        <div class="item1"></div>
         <div data-spy="scroll" data-offset="0">
+            <div class="item2" id="displayResults">
         </div>
+        </div>
+    
         <!-- This div displays the roll dice image -->
-        <div id="dicePlay">
+        <div class="item3" id="dicePlay">
             <div id="rollDice" class="text-right">
                 <p> Click to Roll </p>
                 <img src="assets/images/dice-active.png">
             </div>
             <!-- This div displays all die selected for a single roll -->
             <div id="selectedDice" class="text-right"></div>
-         
-           <br></br>
-
-        <div class="text" style="width:100%">Select a Dice to Roll</div>
         <br></br>
+
+        <div>Select a Dice to Roll
         <div id="dice">
             <!-- dice bag -->
             
@@ -103,23 +103,18 @@
                 <img diceValue=100 src="assets/images/dP.png">
                 <p>d100</p>
             </div>
-        </div>
-        </div>
-    </div>
-
-    
-
-
-
-    <footer>
+            </div>
+            </div>
+        <div class="item5">
         <div class="input-group">
             <input id="SendText" type="text" class="form-control" placeholder="Send a message.">
             <span class="input-group-btn">
                 <button id="Send" type="button" class="btn btn-default">Send</button>
             </span>
         </div>
-    </footer>
-
+        </div>
+    </div>
+    </div>
 
     <!--jquery link in js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

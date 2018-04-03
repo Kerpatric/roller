@@ -10,6 +10,7 @@ body {
   background-size: cover;
   font-family: FenwickWoodtype;
   color: black;
+  image-rendering: pixelated;
 }
 
 .navbar {
@@ -33,54 +34,28 @@ body {
 * {
   box-sizing: border-box; 
 }
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
-}
-#main {
-  display: flex;
-  flex: 1;
-}
-#main > #displayResults {
-  flex: 1;
-  order: 1;
-}
 
-#main > #dicePlay {
-  flex: 0 0 20vw;
-}
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer;}
 
-#main > #dicePlay {
-  order: 2;
-  justify-content: center;
-  float: left;
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu main main main'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  padding: 10px;
+  height: 100vh;
 }
-footer {
-  display: block;
-}
-
-header, footer {
-  height: 10vh;
-}
-header, footer, #displayResults, #dicePlay {
-  padding: 1em;
-}
-
-p {
-  font-size: 28px;
-}
-
-.text {
-  float: right;
-  font-size: 28px;
-}
-
-.di {
-  margin:10px;
+.grid-container > div {
+  padding: 20px 0;
+  font-size: 30px;
 }
 
 #dice {
-  display:flex;
+display: flex;
 }
