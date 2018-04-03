@@ -6,150 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Player Screen</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/player.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/player.css">
 </head>
 
 <body>
-
-    <!-- Wrap all page content here -->
-    <div id="wrap">
-
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Zekes</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">
-                            <a href="#" id="home"></a>
+    <div class="containerz">
+        <div class="header">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Zekes</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="home">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
-                        <li>
-                            <a href="#" id="logout">Logout</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="logout">Log Out</a>
                         </li>
+
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
+            </nav>
+        </div>
+        <div class="left">
+            <div id="displayResults">
+                <!-- Chat messages and roll messages goes here -->
             </div>
         </div>
 
-        <!-- Begin page content -->
-        <div class="center-container">
 
-            <div class="center-row">
+        <div class="right">
+            <div>
+                <div class="quadrant-1">
+                    <h3>Click to Roll</h3>
+                    <img src="assets/images/dice-active.png" id="rollDice">
 
-                <div class="col-xs-6">
-                    <!-- This div displays results of roll -->
-                    <div id="displayResults">
-                    </div>
-                    <div data-spy="scroll" data-offset="0">
-                    </div>
-                </div>
-                <div class="col-xs-6"></div>
-
-            </div>
-
-            <div class="center-row">
-
-                <div class="col-xs-6"></div>
-                <div class="col-xs-6">
-                    <div class="row">
-                        <div class="col-xs-5">
-                            <div class="input-group">
-                                <input id="SendText" type="text" class="form-control" placeholder="Send a message.">
-                                <span class="input-group-btn">
-                                    <button id="Send" type="button" class="btn btn-default">Send</button>
-                                </span>
-                            </div>
-                        </div>
-   
-                    </div>
-                </div>
-
-            </div>
-            <div class="center-row20">
-
-                <div class="col-xs-8">
-
-
-                </div>
-                <div class="col-xs-4">
-                    <!-- This div displays the roll dice image -->
-                    <div id="rollDice" class="text-right">
-                        <img src="assets/images/dice-active.png">
-                    </div>
-                    <!-- This div displays all die selected for a single roll -->
                     <div id="selectedDice" class="text-right"></div>
                 </div>
 
-            </div>
 
+                <div class="quadrant-1">
+                    <h3>Select a Dice to Roll</h3>
+                    <div class="dice-bag" id="dice">
+                        <div class="di" id="d2">
+                            <img diceValue=2 src="assets/images/d4.png">
+                            <p>d2</p>
+                        </div>
+                        <div class="di" id="d3">
+                            <img diceValue=3 src="assets/images/d6.png">
+                            <p>d3</p>
+                        </div>
+                        <div class="di" id="d4">
+                            <img diceValue=4 src="assets/images/d4.png">
+                            <p>d4</p>
+                        </div>
+                        <div class="di" id="d6">
+                            <img diceValue=6 src="assets/images/d6.png">
+                            <p>d6</p>
+                        </div>
+                        <div class="di" id="d8">
+                            <img diceValue=8 src="assets/images/d8.png">
+                            <p>d8</p>
+                        </div>
+                        <div class="di" id="d10">
+                            <img diceValue="10" src="assets/images/dP.png">
+                            <p>d10</p>
+                        </div>
+                        <div class="di" id="d12">
+                            <img diceValue=12 src="assets/images/d12.png">
+                            <p>d12</p>
+                        </div>
+                        <div class="di" id="d20">
+                            <img diceValue=20 src="assets/images/d20.png">
+                            <p>d20</p>
+                        </div>
+                        <div class="di" id="d100">
+                            <img diceValue=100 src="assets/images/dP.png">
+                            <p>d100</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-    </div>
-
-    <div id="footer">
-        <div id="dice" class="container">
-            <!-- Footer containing dice bag -->
-            <div class="di" id="d2">
-                <img diceValue=2 src="assets/images/d4.png">
-                <p>d2</p>
+        <div class="footer">
+            <div class="input-group">
+                <input id="SendText" type="text" class="form-control" placeholder="Send a message" aria-label="Type in message here" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="Send">Send</button>
+                </div>
             </div>
-            <div class="di" id="d3">
-                <img diceValue=3 src="assets/images/d6.png">
-                <p>d3</p>
-            </div>
-            <div class="di" id="d4">
-                <img diceValue=4 src="assets/images/d4.png">
-                <p>d4</p>
-            </div>
-            <div class="di" id="d6">
-                <img diceValue=6 src="assets/images/d6.png">
-                <p>d6</p>
-            </div>
-            <div class="di" id="d8">
-                <img diceValue=8 src="assets/images/d8.png">
-                <p>d8</p>
-            </div>
-            <div class="di" id="d10">
-                <img diceValue="10" src="assets/images/dP.png">
-                <p>d10</p>
-            </div>
-            <div class="di" id="d12">
-                <img diceValue=12 src="assets/images/d12.png">
-                <p>d12</p>
-            </div>
-            <div class="di" id="d20">
-                <img diceValue=20 src="assets/images/d20.png">
-                <p>d20</p>
-            </div>
-            <div class="di" id="d100">
-                <img diceValue=100 src="assets/images/dP.png">
-                <p>d100</p>
-            </div>
-
-
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
 
 
