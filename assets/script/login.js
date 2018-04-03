@@ -11,6 +11,8 @@ $(document).ready(function() {
 
   firebase.initializeApp(config);
 
+  isLoggingInViaRegistration = false;
+
   firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
     if (user) {
