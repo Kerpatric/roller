@@ -12,7 +12,6 @@ $(document).ready(function() {
   firebase.initializeApp(config);
 
   firebase.auth().onAuthStateChanged(function(user) {
-
     console.log(user);
     if (user) {
       // User is signed in.
@@ -24,7 +23,11 @@ $(document).ready(function() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      window.location = "index.html";
+      if (!isLoggingInViaRegistration) {
+        // alert("isLoggingInViaRegistration");
+        window.location = "index.html";
+      }
+
       // ...
     } else {
       // User is signed out.
@@ -38,6 +41,7 @@ $(document).ready(function() {
   });
 
   $("#loginButton").on("click", function(event) {
+
     var newEmail = $("#inputEmail").val();
     var newPassword = $("#inputPassword").val();
     console.log(newEmail);
@@ -63,8 +67,9 @@ $(document).ready(function() {
   });
 
   $("#submitButton").on("click", function(event) {
-    console.log("a");
+    var _this = this;
     event.preventDefault();
+    
 
     var emailAddress = $("#newEmail")
       .val()
@@ -76,10 +81,6 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    console.log(emailAddress);
-    console.log(firstPassword);
-    console.log(confirmFirstPassword);
-
     var newUser = {
       email: emailAddress,
       password: firstPassword
@@ -89,33 +90,44 @@ $(document).ready(function() {
     if (firstPassword !== confirmFirstPassword) {
       alert("Passwords Do Not Match, Please Try Again");
     } else {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(emailAddress, firstPassword)
-        .then(user => {
-          // [END createwithemail]
-          // callSomeFunction(); Optional
-          // var user = firebase.auth().currentUser;
-          user
-            .updateProfile({
-              displayName: $("#newName").val()
-            })
-            .then(
-              function() {
-                // Update successful.
-              },
-              function(error) {
-                // An error happened.
-              }
-            );
-        })
-        .catch(function(error) {
+
+      isLoggingInViaRegistration = true;
+
+      var pp = new Promise((resolve, reject) => {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(emailAddress, firstPassword)
+          .then(usz => {
+            // [END createwithemail]
+            // callSomeFunction(); Optional
+            var user = firebase.auth().currentUser;
+            console.log("Current User...");
+            console.log(user);
+            dName = $("#newName").val();
+            console.log(dName);
+            // alert('Profile Value: ' + dName);
+            user
+              .updateProfile({ displayName: dName })
+              .then(() => resolve(user))
+              .catch(err => reject(err));
+          })
+          .catch(error => reject(error));
+      });
+
+      pp.then(
+        user => {
+          console.log('moving user');
+          console.log(user);
+          window.location = "index.html";
+        },
+        error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
           // ...
           alert(errorMessage);
-        });
+        }
+      );
     }
   });
 
@@ -168,12 +180,15 @@ $(document).ready(function() {
       });
   });
 
-  $("#forgot").on('click', evt => { 
+  $("#forgot").on("click", evt => {
     var newEmail = $("#inputEmail").val();
-    firebase.auth().sendPasswordResetEmail(newEmail).then(() => {
-      $("#inputEmail").val("");
-      alert('Email sent.  Thank you.');
-
-    }).catch(err => alert(err.message));
+    firebase
+      .auth()
+      .sendPasswordResetEmail(newEmail)
+      .then(() => {
+        $("#inputEmail").val("");
+        alert("Email sent.  Thank you.");
+      })
+      .catch(err => alert(err.message));
   });
 });
