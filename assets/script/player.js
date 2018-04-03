@@ -125,7 +125,7 @@ $(document).ready(function() {
     // $("#displayResults").append("displayName rolled: " + sum + "<br>");
     queue = [];
 
-    var message = displayName + " rolled a " + sum;
+    var message = displayName + " rolled " + sum;
 
     firebase.database().ref('chat').push({ Message :  message } );
 

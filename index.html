@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Player Screen</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/player.css">
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous"-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/player.css">
 
 </head>
 
@@ -16,9 +17,24 @@
 
     <!-- Wrap all page content here -->
 
-    <!-- Fixed navbar -->
-    <header>
-        <div class="navbar navbar-default navbar-fixed-top">
+    <!-- Title Bar -->
+
+    <div class="titleBar">
+        <div>
+            <a href="#" id="home"></a>
+        </div>
+        <div id="zekes">
+            <p>ZekeS</o>
+        </div>
+
+        <div>
+            <a href="#" id="logout">Logout</a>
+        </div>
+    </div>
+  
+
+    <!-- Old Code -->
+    <!--<div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,88 +54,100 @@
                         </li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
+                <!--/.nav-collapse 
             </div>
-        </div>
-    </header>
+        </div>-->
+
+
 
     <!-- Begin page content -->
 
-    <div id="main">
+    <div class="mainBody">
+        <!--div id="main"-->
         <!-- This div displays results of roll -->
-        <div id="displayResults">
+        <div class="item1">
+            <div id="displayResults">
+            </div>
+            <div data-spy="scroll" data-offset="0">
+            </div>
         </div>
-        <div data-spy="scroll" data-offset="0">
+
+        <div class="item6">
+            <div class="text" style="width:100%">Select which dice you would like to roll</div>
         </div>
         <!-- This div displays the roll dice image -->
-        <div id="dicePlay">
-            <div id="rollDice" class="text-right">
-                <p> Click to Roll </p>
-                <img src="assets/images/dice-active.png">
-            </div>
-            <!-- This div displays all die selected for a single roll -->
-            <div id="selectedDice" class="text-right"></div>
-         
-           <br></br>
+        <div class="item7">
+            <div id="dice">
+                <!-- dice bag -->
 
-        <div class="text" style="width:100%">Select a Dice to Roll</div>
-        <br></br>
-        <div id="dice">
-            <!-- dice bag -->
-            
-            <div class="di" id="d2">
-                <img diceValue=2 src="assets/images/d4.png">
-                <p>d2</p>
-            </div>
-            <div class="di" id="d3">
-                <img diceValue=3 src="assets/images/d6.png">
-                <p>d3</p>
-            </div>
-            <div class="di" id="d4">
-                <img diceValue=4 src="assets/images/d4.png">
-                <p>d4</p>
-            </div>
-            <div class="di" id="d6">
-                <img diceValue=6 src="assets/images/d6.png">
-                <p>d6</p>
-            </div>
-            <div class="di" id="d8">
-                <img diceValue=8 src="assets/images/d8.png">
-                <p>d8</p>
-            </div>
-            <div class="di" id="d10">
-                <img diceValue="10" src="assets/images/dP.png">
-                <p>d10</p>
-            </div>
-            <div class="di" id="d12">
-                <img diceValue=12 src="assets/images/d12.png">
-                <p>d12</p>
-            </div>
-            <div class="di" id="d20">
-                <img diceValue=20 src="assets/images/d20.png">
-                <p>d20</p>
-            </div>
-            <div class="di" id="d100">
-                <img diceValue=100 src="assets/images/dP.png">
-                <p>d100</p>
+                <div class="di" id="d2">
+                    <img diceValue=2 src="assets/images/d4.png" width="50px" height="50px">
+                    <p>d2</p>
+                </div>
+                <div class="di" id="d3">
+                    <img diceValue=3 src="assets/images/d6.png" width="50px" height="50px">
+                    <p>d3</p>
+                </div>
+                <div class="di" id="d4">
+                    <img diceValue=4 src="assets/images/d4.png" width="50px" height="50px">
+                    <p>d4</p>
+                </div>
+                <div class="di" id="d6">
+                    <img diceValue=6 src="assets/images/d6.png" width="50px" height="50px">
+                    <p>d6</p>
+                </div>
+                <div class="di" id="d8">
+                    <img diceValue=8 src="assets/images/d8.png" width="50px" height="50px">
+                    <p>d8</p>
+                </div>
+                <div class="di" id="d10">
+                    <img diceValue="10" src="assets/images/dP.png" width="50px" height="50px">
+                    <p>d10</p>
+                </div>
+                <div class="di" id="d12">
+                    <img diceValue=12 src="assets/images/d12.png" width="50px" height="50px">
+                    <p>d12</p>
+                </div>
+                <div class="di" id="d20">
+                    <img diceValue=20 src="assets/images/d20.png" width="50px" height="50px">
+                    <p>d20</p>
+                </div>
+                <div class="di" id="d100">
+                    <img diceValue=100 src="assets/images/dP.png" width="50px" height="50px">
+                    <p>d100</p>
+                </div>
             </div>
         </div>
+
+        <div class="item5">
+                <!-- This div displays all die selected for a single roll -->
+                <div id="selectedDice"></div>
+            </div>
+
+        <div class="item3">
+            <!--div id="dicePlay" class="text-right"-->
+            <p>Click to Roll   </p>
+            <!--/div-->
         </div>
+
+        <div class="item4">
+            <div id="rollDice">
+                <img src="assets/images/dice-active.png" width="120px" height="120px">
+            </div>
+        </div>   
+
+        <div class="item8">
+
+            <div class="input-group">
+                <input id="SendText" type="text" placeholder="Send a message">
+                <br>
+                    <button id="Send" type="button" class="btn btn-default">Send</button>
+                
+            </div>
+        </div>
+
+
     </div>
-
-    
-
-
-
-    <footer>
-        <div class="input-group">
-            <input id="SendText" type="text" class="form-control" placeholder="Send a message.">
-            <span class="input-group-btn">
-                <button id="Send" type="button" class="btn btn-default">Send</button>
-            </span>
-        </div>
-    </footer>
-
 
     <!--jquery link in js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
