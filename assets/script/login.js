@@ -11,6 +11,7 @@ $(document).ready(function() {
 
   firebase.initializeApp(config);
 
+
   isLoggingInViaRegistration = false;
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -82,6 +83,7 @@ $(document).ready(function() {
     var confirmFirstPassword = $("#confirmPassword")
       .val()
       .trim();
+
 
     var newUser = {
       email: emailAddress,
