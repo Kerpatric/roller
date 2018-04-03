@@ -41,6 +41,8 @@ $(document).ready(function() {
   firebase.database().ref("chat").on("child_added", function(snapshot) {
     var d = snapshot.val();
     $("#displayResults").append('<div class="message">' + d.Message + '</div>');
+    var objDiv = document.getElementById("displayResults");
+    objDiv.scrollTop = objDiv.scrollHeight;
   });
 
   var queue = [];
@@ -99,11 +101,9 @@ $(document).ready(function() {
     var img = myElement.clone();
     $("#selectedDice").append(img);
     var diceValue = $(this).attr("diceValue");
-    var ericVal = rolldice(diceValue);
-    console.log(ericVal);
-    queue.push(ericVal);
-    console.log(queue);
-    console.log("sum");
+
+    queue.push(rolldice(diceValue));
+
     sum = queue.reduce(
       (accumulator, currentValue) => accumulator + currentValue
     );
@@ -115,10 +115,8 @@ $(document).ready(function() {
     var img = myElement.remove();
   });
   //When the roll dice image is clicked, all dice in the selected dice div (rolling que) are rolled
-  $("#rollDice").on("click", "img", function() {
-    rolldice();
+  $("#rollDice").on("click", function() {
 
-    console.log(queue);
     //the images of the dice in the rolling que are removed
     $("#selectedDice").html("");
     //the sum of the roll is displayed in the results div
@@ -137,7 +135,4 @@ $(document).ready(function() {
     firebase.database().ref('chat').push({ Message :  message } );
   });
 
-  
-
-  
 });

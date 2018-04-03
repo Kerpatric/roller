@@ -4,83 +4,120 @@
 }
 
 body {
-  background-image: url("../images/parchment.jpg");
+  background-image: url(../images/parchment.jpg);
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: FenwickWoodtype;
+
   color: black;
 }
 
-.navbar {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  background: rgb(7, 7, 7);
+
+h3 {
+  font-family: FenwickWoodtype;
+}
+
+.containerz {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 3fr 1fr;
+  height: 100vh
+}
+
+
+.containerz>div {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.left {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  min-height: 4em;
+}
+
+.header {
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.right {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  min-height: 4em;
+  text-align: center;
+}
+
+
+.left>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.right>div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.footer {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
+.footer>div {
+  padding: 5px
+}
+
+.dice-bag {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.di>img {
+  margin: 10px;
+}
+
+.di>p {
+  margin: 0;
+  padding: 0;
+  text-align: center
+}
+
+.quadrant-1 {
+  height: 40vh;
+}
+
+.quadrant-2 {
+  height: 60vh;
+}
+
+#selectedDice>img {
+  margin: 5px;
 }
 
 .navbar-brand {
   font-family: FenwickWoodtype;
   font-size: 36px;
+  color: rgb(116, 112, 112);
+  margin:0;
+  padding:0;
+  margin-right:10px;
+ 
 }
 
 .message {
   font-size:22px;
-  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(91, 16, 16);
-  text-shadow: 1px 1px #999797;
-}
-* {
-  box-sizing: border-box; 
-}
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
-}
-#main {
-  display: flex;
-  flex: 1;
-}
-#main > #displayResults {
-  flex: 1;
-  order: 1;
-}
-
-#main > #dicePlay {
-  flex: 0 0 20vw;
-}
-
-#main > #dicePlay {
-  order: 2;
-  justify-content: center;
-  float: left;
-}
-footer {
-  display: block;
-}
-
-header, footer {
-  height: 10vh;
-}
-header, footer, #displayResults, #dicePlay {
-  padding: 1em;
-}
-
-p {
-  font-size: 28px;
-}
-
-.text {
-  float: right;
-  font-size: 28px;
-}
-
-.di {
-  margin:10px;
-}
-
-#dice {
-  display:flex;
+  color: rgb(107, 16, 16);
+  padding-left:10px;
 }

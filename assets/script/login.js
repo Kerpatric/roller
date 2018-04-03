@@ -11,6 +11,9 @@ $(document).ready(function() {
 
   firebase.initializeApp(config);
 
+
+  isLoggingInViaRegistration = false;
+
   firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
     if (user) {
@@ -23,7 +26,11 @@ $(document).ready(function() {
       var uid = user.uid;
       var providerData = user.providerData;
 
-      window.location = "index.html";
+      if (!isLoggingInViaRegistration) {
+        // alert("isLoggingInViaRegistration");
+        window.location = "index.html";
+      }
+
       // ...
     } else {
       // User is signed out.
@@ -37,6 +44,7 @@ $(document).ready(function() {
   });
 
   $("#loginButton").on("click", function(event) {
+
     var newEmail = $("#inputEmail").val();
     var newPassword = $("#inputPassword").val();
     console.log(newEmail);
@@ -62,8 +70,9 @@ $(document).ready(function() {
   });
 
   $("#submitButton").on("click", function(event) {
-    console.log("a");
+    var _this = this;
     event.preventDefault();
+    
 
     var emailAddress = $("#newEmail")
       .val()
@@ -75,11 +84,6 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    var newName = $("#newName").val().trim();
-
-    console.log(emailAddress);
-    console.log(firstPassword);
-    console.log(confirmFirstPassword);
 
     var newUser = {
       email: emailAddress,
@@ -90,33 +94,44 @@ $(document).ready(function() {
     if (firstPassword !== confirmFirstPassword) {
       alert("Passwords Do Not Match, Please Try Again");
     } else {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(emailAddress, firstPassword)
-        .then(user => {
-          // [END createwithemail]
-          // callSomeFunction(); Optional
-          // var user = firebase.auth().currentUser;
-          user
-            .updateProfile({
-              displayName: newName
-            })
-            .then(
-              function() {
-                // Update successful.
-              },
-              function(error) {
-                // An error happened.
-              }
-            );
-        })
-        .catch(function(error) {
+
+      isLoggingInViaRegistration = true;
+
+      var pp = new Promise((resolve, reject) => {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(emailAddress, firstPassword)
+          .then(usz => {
+            // [END createwithemail]
+            // callSomeFunction(); Optional
+            var user = firebase.auth().currentUser;
+            console.log("Current User...");
+            console.log(user);
+            dName = $("#newName").val();
+            console.log(dName);
+            // alert('Profile Value: ' + dName);
+            user
+              .updateProfile({ displayName: dName })
+              .then(() => resolve(user))
+              .catch(err => reject(err));
+          })
+          .catch(error => reject(error));
+      });
+
+      pp.then(
+        user => {
+          console.log('moving user');
+          console.log(user);
+          window.location = "index.html";
+        },
+        error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
           // ...
           alert(errorMessage);
-        });
+        }
+      );
     }
   });
 
